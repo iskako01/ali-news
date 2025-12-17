@@ -1,18 +1,18 @@
-import Link from "next/link";
+import classes from "./page.module.css";
+
+import { DUMMY_NEWS } from "@/dummy-news";
+import NewsItem from "@/components/news/news-item";
 
 export default function NewsPage() {
   return (
-    <div>
+    <>
       <h1>News Page</h1>
-      <p>
-        <Link href="/news/first">first</Link>
-      </p>
-      <p>
-        <Link href="/news/second">second</Link>
-      </p>
-      <p>
-        <Link href="/news/third">third</Link>
-      </p>
-    </div>
+
+      <ul className={classes.newsList}>
+        {DUMMY_NEWS.map((newsItem) => (
+          <NewsItem key={newsItem.id} newsItem={newsItem} />
+        ))}
+      </ul>
+    </>
   );
 }
