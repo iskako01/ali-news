@@ -1,5 +1,6 @@
 import { DUMMY_NEWS } from "@/dummy-news";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export default async function NewsDetailPage(props: {
   params: { slug: string };
@@ -7,6 +8,12 @@ export default async function NewsDetailPage(props: {
   const { slug } = await props.params;
 
   const newsItem = DUMMY_NEWS.find((item) => item.slug === slug);
+
+  if (!newsItem) {
+    notFound();
+  }
+
+  console.log({ newsItem });
 
   return (
     <article className="news-article">
