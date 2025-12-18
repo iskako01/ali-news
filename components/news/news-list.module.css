@@ -1,0 +1,28 @@
+.newsList {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+.newsList a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  color: #e5e5e1;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 0 0 1rem 0;
+}
+
+.newsList a img {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.newsList a:hover {
+  background-color: #2d2d2b;
+}
