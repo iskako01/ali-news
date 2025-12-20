@@ -14,7 +14,7 @@ export default async function NewsDetailImagePage(props: {
   }
 
   return (
-    <div className="news-image-page">
+    <div className="fullscreen-image">
       <Image src={`/images/news/${newsItem.image}`} alt={newsItem.title} fill />
     </div>
   );

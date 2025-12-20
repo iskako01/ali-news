@@ -1,4 +1,3 @@
-import MainHeader from "@/components/main-header/main-header";
 import "./globals.css";
 
 export const metadata = {
@@ -6,19 +5,10 @@ export const metadata = {
   description: "Learn how to route to different pages.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <div className="page">
-          <MainHeader />
-          {children}
-        </div>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
