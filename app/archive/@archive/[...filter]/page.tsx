@@ -30,6 +30,16 @@ export default async function FilteredNewsPage(props) {
     newsContent = <NewsList news={news} />;
   }
 
+  const isAvailableNewsYear =
+    selectedYear && getAvailableNewsYears().includes(+selectedYear);
+  const isAvailableNewsMonth =
+    selectedMonth &&
+    getAvailableNewsMonths(selectedYear).includes(+selectedMonth);
+
+  if (isAvailableNewsYear || !isAvailableNewsMonth) {
+    throw new Error("Invalid filter.");
+  }
+
   return (
     <>
       <header className="archive-header">
