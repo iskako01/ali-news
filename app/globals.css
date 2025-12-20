@@ -88,3 +88,15 @@ ul {
   text-align: center;
   margin-top: 3rem;
 }
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #bcbcb7;
+  color: #181817;
+}
+
+.news-image-page { 
+  position: relative; 
+  width: 100%; 
+  height: 80vh; 
+}

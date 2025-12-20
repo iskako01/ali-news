@@ -1,5 +1,6 @@
 import Link from "next/link";
 import classes from "./main-header.module.css";
+import Navlink from "@/components/common/nav-link";
 
 export default function MainHeader() {
   return (
@@ -11,7 +12,10 @@ export default function MainHeader() {
       <nav>
         <ul>
           <li>
-            <Link href="/news">News</Link>
+            <Navlink href="/news">News</Navlink>
+          </li>
+          <li>
+            <Navlink href="/archive">Archive</Navlink>
           </li>
         </ul>
       </nav>
