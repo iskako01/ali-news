@@ -1,14 +1,13 @@
-import { DUMMY_NEWS } from "@/dummy-news";
+import * as React from "react";
+import { getNewsBySlug } from "@/lib/news";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export default async function NewsDetailPage(props: {
-  params: { slug: string };
-}) {
-  const { slug } = await props.params;
+export default function NewsDetailPage({ params }) {
+  const { slug } = React.use(params);
 
-  const newsItem = DUMMY_NEWS.find((item) => item.slug === slug);
+  const newsItem = getNewsBySlug(slug);
 
   if (!newsItem) {
     notFound();

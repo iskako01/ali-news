@@ -1,15 +1,15 @@
 "use client";
 
 import * as React from "react";
-import { DUMMY_NEWS } from "@/dummy-news";
 import Image from "next/image";
 import { notFound, useRouter } from "next/navigation";
+import { getNewsBySlug } from "@/lib/news";
 
 export default function InterceptedNewsDetailImagePage({ params }) {
   const { slug } = React.use(params);
   const router = useRouter();
 
-  const newsItem = DUMMY_NEWS.find((item) => item.slug === slug);
+  const newsItem = getNewsBySlug(slug);
 
   if (!newsItem) {
     notFound();
