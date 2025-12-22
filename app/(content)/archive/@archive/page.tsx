@@ -1,3 +1,4 @@
+import React from "react";
 import NewsList from "@/components/news/news-list";
 import {
   getAvailableNewsMonths,
@@ -6,10 +7,10 @@ import {
   getNewsForYearAndMonth,
 } from "@/lib/news";
 import Link from "next/link";
-import React from "react";
 
 export default function ArchiveNewsPage({ params }) {
   const { filter } = React.use(params);
+  console.log("ArchiveNewsPage", { filter });
   const selectedYear = filter?.[0] || null;
   const selectedMonth = filter?.[1] || null;
 
